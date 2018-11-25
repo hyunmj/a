@@ -212,7 +212,7 @@ function initTextures(gl, n) {
   image.onload = function(){ loadTexture(gl, n, texture, u_Sampler, image); };
   // Tell the browser to load an image
   image.crossOrigin="Anonymous"
-  image.src = './map.png';
+  image.src = './map.jpg';
 
   return true;
 }
