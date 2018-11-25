@@ -217,6 +217,8 @@ function initTextures(gl, n) {
   image.crossOrigin="Anonymous"
   image.src = './map.jpg';
 
+
+  console.log('return true')
   return true;
 }
 
