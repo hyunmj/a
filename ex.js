@@ -180,7 +180,7 @@ function initTextureBuffers(gl) {
   }
   // Assign the buffer object to a_TexCoord variable
   gl.vertexAttribPointer(a_TexCoord, 2, gl.FLOAT, false, FSIZE * 4, FSIZE * 2);
-  gl.enableVertexAttribArray(a_TexCoord);  // Enable the assignment of the buffer object
+  //gl.enableVertexAttribArray(a_TexCoord);  // Enable the assignment of the buffer object
 
   return n;
 }
