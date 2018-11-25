@@ -72,6 +72,8 @@ function main() {
     console.log('Failed to intialize the texture.');
     return;
   }
+
+/*
   // Get the storage locations of uniform variables
   var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
   var u_NormalMatrix = gl.getUniformLocation(gl.program, 'u_NormalMatrix');
@@ -87,7 +89,7 @@ function main() {
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix,
   u_NormalMatrix); };
   draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, canvas); // Draw the robot arm
-
+*/
 }
 
 var rot=0.0, tran=0.0, g_z=0.0;
