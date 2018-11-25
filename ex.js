@@ -45,13 +45,11 @@ function main() {
     return;
   }
   // Set the vertex information
-	/*
   var n = initVertexBuffers(gl);
   if (n < 0) {
     console.log('Failed to set the vertex information');
     return;
   }
-  */
 
   var tn = initTextureBuffers(gl);
   if (tn<0) {
@@ -70,7 +68,7 @@ function main() {
   gl.viewport(0, 0, w/2, h);
 
   // Set texture
-  if (!initTextures(gl, tn)) {
+  if (!initTextures(gl, n)) {
     console.log('Failed to intialize the texture.');
     return;
   }
@@ -212,6 +210,7 @@ function initTextures(gl, n) {
   // Register the event handler to be called on loading an image
   image.onload = function(){ loadTexture(gl, n, texture, u_Sampler, image); };
   // Tell the browser to load an image
+  image.crossOrigin="Anonymous"
   image.src = './map.jpg';
 
   return true;
