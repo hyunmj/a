@@ -44,8 +44,9 @@ function main() {
     console.log('Failed to intialize shaders.');
     return;
   }
+
+  /*
   // Set the vertex information
-	/*
   var n = initVertexBuffers(gl);
   if (n < 0) {
     console.log('Failed to set the vertex information');
