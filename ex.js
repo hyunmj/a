@@ -191,9 +191,7 @@ function initTextureBuffers(gl) {
 
 function initTextures(gl, n) {
   var texture = gl.createTexture();   // Create a texture object
-  gl.bindTexture(gl.TEXTURE_2D, tex);
-  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE,
-              new Uint8Array([255, 0, 0, 255])); // red
+
   if (!texture) {
     console.log('Failed to create the texture object');
     return false;
@@ -214,7 +212,7 @@ function initTextures(gl, n) {
   image.onload = function(){ loadTexture(gl, n, texture, u_Sampler, image); };
   // Tell the browser to load an image
   image.crossOrigin="Anonymous"
-  image.src = './map.jpg';
+  image.src = './map.png';
 
   return true;
 }
