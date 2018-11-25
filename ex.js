@@ -57,11 +57,7 @@ function main() {
     return;
   }
 
-  // Set texture
-  if (!initTextures(gl, n)) {
-    console.log('Failed to intialize the texture.');
-    return;
-  }
+
   // Set the clear color and enable the depth test
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
   gl.enable(gl.DEPTH_TEST);
@@ -70,6 +66,12 @@ function main() {
 	var	h = canvas.height;
 
   gl.viewport(0, 0, w/2, h);
+
+  // Set texture
+  if (!initTextures(gl, n)) {
+    console.log('Failed to intialize the texture.');
+    return;
+  }
   // Get the storage locations of uniform variables
   var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
   var u_NormalMatrix = gl.getUniformLocation(gl.program, 'u_NormalMatrix');
@@ -180,7 +182,7 @@ function initTextureBuffers(gl) {
   }
   // Assign the buffer object to a_TexCoord variable
   gl.vertexAttribPointer(a_TexCoord, 2, gl.FLOAT, false, FSIZE * 4, FSIZE * 2);
-  //gl.enableVertexAttribArray(a_TexCoord);  // Enable the assignment of the buffer object
+  gl.enableVertexAttribArray(a_TexCoord);  // Enable the assignment of the buffer object
 
   return n;
 }
@@ -206,7 +208,7 @@ function initTextures(gl, n) {
   // Register the event handler to be called on loading an image
   image.onload = function(){ loadTexture(gl, n, texture, u_Sampler, image); };
   // Tell the browser to load an image
-  image.src = 'hyunmj.github.io/a/map.jpg';
+  image.src = './map.jpg';
 
   return true;
 }
