@@ -45,11 +45,13 @@ function main() {
     return;
   }
   // Set the vertex information
+	/*
   var n = initVertexBuffers(gl);
   if (n < 0) {
     console.log('Failed to set the vertex information');
     return;
   }
+  */
 
   var tn = initTextureBuffers(gl);
   if (tn<0) {
@@ -68,7 +70,7 @@ function main() {
   gl.viewport(0, 0, w/2, h);
 
   // Set texture
-  if (!initTextures(gl, n)) {
+  if (!initTextures(gl, tn)) {
     console.log('Failed to intialize the texture.');
     return;
   }
